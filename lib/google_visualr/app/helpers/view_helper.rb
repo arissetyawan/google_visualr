@@ -4,6 +4,7 @@ module GoogleVisualr
       extend ActiveSupport::Concern
 
       included do
+        # Fix for Rails 5
         if respond_to?(:helper_method)
           helper_method "render_chart"
         end
