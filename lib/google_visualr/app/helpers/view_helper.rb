@@ -4,7 +4,9 @@ module GoogleVisualr
       extend ActiveSupport::Concern
 
       included do
-        helper_method "render_chart"
+        if respond_to?(:helper_method)
+          helper_method "render_chart"
+        end
       end
 
       def render_chart(chart, dom, options={})
